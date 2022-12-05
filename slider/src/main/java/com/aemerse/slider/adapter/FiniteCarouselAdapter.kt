@@ -166,4 +166,13 @@ open class FiniteCarouselAdapter(
 
         return this.dataList
     }
+
+    /**
+     * Add a single carousel item with the existing items.
+     */
+    fun removeData(item: CarouselItem): List<CarouselItem> {
+        this.dataList.remove(item)
+        notifyDataSetChanged()
+        return this.dataList
+    }
 }

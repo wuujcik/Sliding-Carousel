@@ -1006,6 +1006,26 @@ class ImageCarousel(
         }
     }
 
+    /**
+     * Remove single data from the carousel.
+     *
+     * @property item Single [CarouselItem].
+     */
+    fun removeItem(item: CarouselItem) {
+        adapter?.apply {
+
+            val data = removeData(item = item)
+
+            this@ImageCarousel.data = data
+            this@ImageCarousel.dataSize = data.size
+
+            createIndicator()
+
+            initOnScrollStateChange()
+        }
+    }
+
+
     // ----------------------------------------------------------------
 
     /**
